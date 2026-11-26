@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CXG and QContact · Prepared for Access Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* =====================================================================
+   SWISS MONOCHROME layout from the CXG deck system (pps-cxg-cx template),
+   recoloured in Access Bank navy and orange.
+   ===================================================================== */
+:root{
+  --ink:#111418; --ink-soft:#3A3F48; --mute:rgba(17,20,24,.6);
+  --paper:#fff; --paper-dim:#F2F2F2; --line:rgba(17,20,24,.16);
+  --navy:#16181D; --navy-2:#2A2D35;
+  --accent:#00387A; --accent-lt:#8FB3E3; --accent-dim:#DCE6F3;
+  --yellow:#00387A; --gold:#C9A227; --gold-lt:#E8CF7A; --ab-orange:#F68B1F;
+  --grot:'Inter Tight','Open Sans',Helvetica,Arial,sans-serif;
+  --sans:'Open Sans',Helvetica,Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{counter-reset:slidenum;margin:0;background:#fff;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---------- slide shell ---------- */
+[data-slide]{counter-increment:slidenum;position:relative;min-height:100vh;width:100%;display:flex;flex-direction:column;justify-content:center;padding:12vh 7vw 9vh;background:#fff}
+[data-slide]::before{content:"CXG \00a0\00b7\00a0 QContact \00a0\00b7\00a0 Prepared for Access Bank \00a0\00b7\00a0 Proposal options \00a0\00b7\00a0 November 2026";position:absolute;left:7vw;right:7vw;top:3.4vh;z-index:3;font-family:var(--grot);font-weight:600;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);padding-bottom:.7rem;border-bottom:2px solid var(--ink)}
+[data-slide]::after{content:counter(slidenum,decimal-leading-zero);position:absolute;right:7vw;bottom:4vh;font-family:var(--grot);font-weight:800;font-size:1.1rem;letter-spacing:.02em;color:var(--ink);z-index:3}
+.no-index[data-slide]::after{content:none}
+.lt{background:var(--paper-dim)!important}
+.slide-inner{max-width:1220px;margin:0 auto;width:100%;position:relative;z-index:1}
+.slide-logos{position:absolute;top:calc(3.4vh - 14px);right:7vw;z-index:6;display:flex;align-items:center;gap:12px;pointer-events:none}
+.slide-logos img{height:20px;width:auto}
+.slide-logos .sl-ft{height:24px}
+.slide-logos .sl-sep{width:1px;height:18px;background:rgba(17,20,24,.25)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--grot);font-weight:600;font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.2rem}
+.eyebrow::before{content:"";width:10px;height:10px;background:var(--yellow);box-shadow:inset 0 0 0 2px var(--ink);flex-shrink:0}
+h1,h2,h3,h4{font-family:var(--grot);margin:0 0 1rem;color:var(--ink)}
+h1,h2{font-weight:700;letter-spacing:-.045em;line-height:.98}
+h2{font-size:clamp(2.2rem,4.1vw,3.7rem);max-width:22ch}
+h3{font-weight:700;font-size:clamp(1.1rem,1.6vw,1.35rem);letter-spacing:-.02em;line-height:1.12}
+h4{font-weight:700;font-size:1.05rem;letter-spacing:-.015em;line-height:1.2;margin-bottom:.55rem}
+h1 em,h2 em{font-style:normal;color:var(--accent)}
+p{line-height:1.6;margin:0 0 1rem;color:var(--ink-soft);font-size:1rem}
+.lede{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--ink-soft);max-width:62ch;line-height:1.5}
+.mono{font-family:var(--mono)}
+.acc{color:var(--accent)}
+
+/* ---------- strict grid: rules, no boxes ---------- */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));column-gap:28px;margin-top:1.8rem}
+.card{border-top:2px solid var(--ink);padding:1.1rem 0 1.4rem}
+.card .tag{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.card p{font-size:.92rem;margin:0;color:var(--ink-soft);line-height:1.55}
+.cols-2{grid-template-columns:repeat(2,1fr)!important}
+.cols-3{grid-template-columns:repeat(3,1fr)!important}
+.cols-4{grid-template-columns:repeat(4,1fr)!important}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3.4rem;margin-top:.5rem;align-items:start}
+
+/* exec band */
+.exec-band{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;border:2px solid var(--ink);border-left:8px solid var(--yellow);padding:1.3rem 1.5rem;margin-top:.6rem}
+.exec-band h4{font-size:1.4rem;font-weight:800;letter-spacing:-.03em}
+.eb-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.eb-stats b{display:block;font-family:var(--grot);font-weight:800;font-size:1.6rem;letter-spacing:-.03em;color:var(--accent);white-space:nowrap}
+.eb-stats span{display:block;font-size:.76rem;color:var(--ink-soft);line-height:1.3}
+
+/* stats */
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.4rem;margin-top:2rem;padding-top:1.4rem;border-top:2px solid var(--ink)}
+.kpi-strip .val{font-family:var(--grot);font-weight:800;font-size:clamp(2rem,3.4vw,3.2rem);letter-spacing:-.045em;line-height:1}
+.kpi-strip .val.hit{color:var(--accent)}
+.kpi-strip .lbl{font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);margin-top:.5rem;line-height:1.35}
+.mega{font-family:var(--grot);font-weight:800;letter-spacing:-.06em;line-height:.85;font-size:clamp(5rem,12vw,11rem)}
+.mega small{font-size:.3em;letter-spacing:-.02em;color:var(--mute)}
+
+/* bars */
+.bars{border-top:2px solid var(--ink)}
+.bar{display:grid;grid-template-columns:minmax(150px,230px) 1fr 90px;align-items:center;gap:16px;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.bar .lbl{font-size:.92rem;color:var(--ink);font-weight:600}
+.bar .lbl small{display:block;font-weight:400;font-size:.76rem;color:var(--mute)}
+.bar .trk{height:14px;background:var(--paper-dim);position:relative}
+.lt .bar .trk{background:#fff}
+.bar .fill{position:absolute;inset:0 auto 0 0;background:var(--ink);transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.bar .fill.acc{background:var(--accent)}
+.bar .fill.yel{background:var(--yellow);box-shadow:inset 0 0 0 1px rgba(17,20,24,.25)}
+.bar .val{font-family:var(--grot);font-weight:800;font-size:1rem;text-align:right;letter-spacing:-.02em}
+
+/* pull quote */
+.pull-quote{border-left:8px solid var(--yellow);padding-left:1.6rem;margin:0 0 1.8rem}
+.pull-quote p{font-family:var(--grot);font-weight:600;letter-spacing:-.02em;font-size:clamp(1.3rem,2.1vw,1.85rem);color:var(--ink);line-height:1.25;margin-bottom:.8rem}
+.pull-quote cite{font-family:var(--mono);font-style:normal;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+
+/* steps */
+.phase-row{display:grid;grid-template-columns:repeat(4,1fr);column-gap:28px;margin-top:1.8rem}
+.phase{border-top:8px solid var(--ink);padding-top:1rem}
+.phase.go{border-top-color:var(--accent)}
+.phase.yl{border-top-color:var(--yellow)}
+.phase .w{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.phase h4{margin:.4rem 0 .5rem;font-size:1.2rem}
+.phase p{font-size:.9rem;margin:0}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
+.chip{font-family:var(--grot);font-weight:700;font-size:.9rem;padding:.45rem .85rem;border:2px solid var(--ink);color:var(--ink)}
+.chip.on{background:var(--yellow);color:#fff;border-color:var(--yellow)}
+.dk .chip.on,.divider .chip.on{color:#1d1206}
+
+/* cover */
+.cover{justify-content:space-between;padding:14vh 7vw 6vh!important}
+.cover-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:5vw;align-items:end}
+.cover h1{font-size:clamp(2.8rem,5.6vw,5.4rem);max-width:15ch;margin-bottom:1.4rem}
+.cover-id{display:flex;align-items:center;gap:1.1rem;margin-top:2rem;flex-wrap:wrap}
+.cover-id img{height:28px;width:auto}
+.cover-id .ft{height:40px}
+.cover-id .sep{width:1px;height:26px;background:var(--line)}
+.cover-id .mem{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.cover-fig{border-top:8px solid var(--yellow);padding-top:1rem}
+.cover-fig p{font-size:.9rem;margin:.6rem 0 0}
+.market-band{display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--ink);margin-top:5vh}
+.market-band .mb{padding:1rem 1.4rem 0 0}
+.market-band .mb+.mb{padding-left:1.4rem;border-left:1px solid var(--line)}
+.market-band span{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:.35rem}
+.market-band b{display:block;font-family:var(--grot);font-weight:800;font-size:clamp(1.3rem,2vw,1.9rem);letter-spacing:-.03em}
+.market-band b.acc{color:var(--accent)}
+
+/* section dividers */
+.divider .slide-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:5vw;align-items:end}
+.divider .dnum{font-family:var(--grot);font-weight:800;letter-spacing:-.07em;line-height:.8;font-size:clamp(9rem,22vw,20rem)}
+.divider h2{font-size:clamp(2.4rem,4.6vw,4.2rem);max-width:14ch}
+.divider .inside{margin-top:1.6rem}
+.divider .inside div{display:grid;grid-template-columns:3rem 1fr;padding:.55rem 0;font-size:.95rem}
+.divider .inside div b{font-family:var(--grot);font-weight:700;font-size:.75rem;padding-top:.15rem}
+.divider .dstat{display:flex;gap:2.4rem;margin-top:1.6rem}
+.divider .dstat div b{display:block;font-family:var(--grot);font-weight:800;font-size:2.2rem;letter-spacing:-.04em;line-height:1}
+.divider .dstat div span{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+
+/* dark slides: cover, dividers, impact, close */
+.dk,.divider,.deck-gate{--yellow:#F68B1F;--accent-lt:#A9C6EE}
+.dk,.divider{background:radial-gradient(circle at 82% 14%,#0B4C93 0%,#00264F 46%,#000F22 100%)!important;color:#fff;overflow:hidden}
+.dk::before,.divider::before{color:rgba(255,255,255,.6);border-bottom-color:rgba(255,255,255,.35)}
+.dk::after,.divider::after{color:rgba(255,255,255,.6)}
+.dk h1,.dk h2,.dk h3,.dk h4,.divider h2{color:#fff}
+.dk h1 em,.dk h2 em,.divider h2 em{color:var(--yellow)}
+.dk p,.dk .lede,.divider .lede,.divider p{color:rgba(255,255,255,.78)}
+.dk .eyebrow,.divider .eyebrow{color:var(--accent-lt)}
+.dk .eyebrow::before,.divider .eyebrow::before{box-shadow:none}
+.dk .slide-logos .sl-sep,.divider .slide-logos .sl-sep{background:rgba(255,255,255,.3)}
+.dk .card{border-top-color:rgba(255,255,255,.35)}
+.dk .card h4{color:#fff}.dk .card p{color:rgba(255,255,255,.72)}.dk .card .tag{color:var(--accent-lt)}
+.dk .kpi-strip{border-top-color:rgba(255,255,255,.3)}
+.dk .kpi-strip .val{color:#fff}.dk .kpi-strip .val.hit{color:var(--yellow)}
+.dk .kpi-strip .lbl{color:rgba(255,255,255,.68)}
+.dk .pull-quote p{color:#fff}.dk .pull-quote cite,.dk .note{color:rgba(255,255,255,.55)}
+.dk .cover-id .sep{background:rgba(255,255,255,.3)}
+.dk .cover-fig .mega{color:var(--yellow)}
+.dk .mega small{color:rgba(255,255,255,.6)}
+.dk .mono{color:rgba(255,255,255,.82)}
+.dk .market-band{border-top-color:rgba(255,255,255,.3)}
+.dk .market-band .mb+.mb{border-left-color:rgba(255,255,255,.16)}
+.dk .market-band span{color:rgba(255,255,255,.6)}
+.dk .market-band b{color:#fff}
+.dk .market-band b.acc{color:var(--accent-lt)}
+.dk .chip{border-color:rgba(255,255,255,.5);color:#fff}
+.dk .chip.on{background:var(--yellow);color:#fff;border-color:var(--yellow)}
+.dk .chip.on,.divider .chip.on{color:#1d1206}
+.divider .dnum{color:#fff}.divider .dnum span{color:var(--yellow)}
+.divider .inside{border-top:1px solid rgba(255,255,255,.25)}
+.divider .inside div{color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
+.divider .inside div b{color:var(--accent-lt)}
+.divider .dstat div b{color:var(--yellow)}
+.divider .dstat div span{color:rgba(255,255,255,.68)}
+
+/* compare columns (inbound against headcount) */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;margin-top:3rem;height:280px;border-bottom:2px solid var(--ink)}
+.vs .col{display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.vs .blk{background:var(--ink);position:relative}
+.vs .blk.y{background:var(--yellow);box-shadow:inset 0 0 0 2px var(--ink)}
+.vs .blk b{position:absolute;top:-2.6rem;left:0;font-family:var(--grot);font-weight:800;font-size:2.2rem;letter-spacing:-.04em;color:var(--ink)}
+.vs-l{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:.6rem}
+.vs-l span{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+
+/* containment donut-free gauge */
+.gauge{display:flex;height:46px;border:2px solid var(--ink);margin:1.2rem 0 .5rem}
+.gauge i{display:block;height:100%}
+.gauge .self{background:var(--accent)}
+.gauge .agent{background:repeating-linear-gradient(135deg,#fff 0 6px,var(--paper-dim) 6px 12px)}
+.gauge-l{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.people{display:flex;gap:10px;margin-top:1.4rem}
+.people i{width:44px;height:58px;display:block;background:var(--accent);clip-path:path('M22 0a11 11 0 1 1 0 22a11 11 0 1 1 0-22ZM2 58c0-14 9-30 20-30s20 16 20 30Z')}
+.people i.off{background:var(--line)}
+
+/* phone (WhatsApp flow, illustrative) */
+.phone{width:300px;border-radius:42px;background:#0b1424;padding:10px;justify-self:center;box-shadow:0 30px 70px rgba(17,20,24,.28)}
+.scr{border-radius:33px;overflow:hidden;background:#ECE5DD;font-family:var(--sans)}
+.ph-h{background:var(--navy);color:#fff;display:flex;gap:9px;align-items:center;padding:28px 14px 11px}
+.ph-h .av{width:34px;height:34px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ph-h .av img{width:30px;height:auto}
+.ph-h b{font-family:var(--grot);font-size:14px;display:block}.ph-h small{font-size:10px;opacity:.8}
+.ph-b{padding:12px 10px 16px;display:flex;flex-direction:column;gap:7px;min-height:380px}
+.bub{font-size:12px;line-height:1.42;padding:8px 11px;border-radius:12px;max-width:86%;color:#111;background:#fff;border-bottom-left-radius:3px}
+.bub.u{background:#D9FDD3;align-self:flex-end;border-bottom-left-radius:12px;border-bottom-right-radius:3px}
+.menu{background:#fff;border-radius:12px;overflow:hidden;max-width:86%;font-size:12px}
+.menu div{padding:7px 11px;border-top:1px solid #EEE;color:#027EB5;text-align:center;font-weight:600}
+.menu div:first-child{border-top:none;color:#111;text-align:left;font-weight:400}
+.tagline{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);text-align:center;margin-top:.8rem}
+
+/* awards (CapeBPO win in gold) */
+.award{border:1px solid rgba(201,162,39,.45);padding:1.1rem 1.2rem;background:rgba(232,207,122,.08)}
+.award .yr{font-family:var(--grot);font-weight:800;font-size:.7rem;letter-spacing:.14em;color:var(--gold-lt);text-transform:uppercase}
+.award h4{margin:.35rem 0 .3rem;color:#fff}
+.award p{font-size:.86rem;margin:0;color:rgba(255,255,255,.72)}
+.award.hero{background:linear-gradient(135deg,#F1DC92,#C9A227 60%,#A8841A);border:none}
+.award.hero h4,.award.hero p,.award.hero .yr{color:#1d1503}
+
+.note{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;color:var(--mute);margin-top:1.6rem;max-width:110ch;line-height:1.5}
+
+/* =====================================================================
+   MOTION LAYER. Slides animate each time they enter view or become the
+   current slide in presenter mode. JS in <head> adds .seen to a slide.
+   ===================================================================== */
+:root{--ease:cubic-bezier(.2,.8,.2,1);--ease-out:cubic-bezier(.16,1,.3,1)}
+
+/* generic reveal */
+html.anim .a-in{opacity:0;transform:translateY(22px);filter:blur(6px);transition:opacity .7s ease,transform .8s var(--ease-out),filter .7s ease;transition-delay:calc(var(--d,0s) + .25s)}
+html.anim .seen .a-in{opacity:1;transform:none;filter:none}
+
+/* eyebrow: square turns in, label slides in */
+html.anim .eyebrow{opacity:0;transform:translateX(-14px);transition:opacity .5s ease,transform .6s var(--ease-out)}
+html.anim .eyebrow::before{transform:rotate(-135deg) scale(.2);transition:transform .7s var(--ease-out) .1s}
+html.anim .seen .eyebrow{opacity:1;transform:none}
+html.anim .seen .eyebrow::before{transform:none}
+
+/* headline: word-by-word rise (words wrapped by JS) */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.w>span{display:inline-block}
+html.anim .w>span{transform:translateY(110%);transition:transform .8s var(--ease-out);transition-delay:calc(var(--wi,0) * 55ms + .05s)}
+html.anim .seen .w>span{transform:none}
+/* accent words get a highlighter sweep */
+h1 em,h2 em{position:relative}
+html.anim h1 em::after,html.anim h2 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.12em;background:currentColor;opacity:.22;transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease-out) .75s}
+html.anim .seen h1 em::after,html.anim .seen h2 em::after{transform:scaleX(1)}
+
+/* rules draw across: cards, phases, strips */
+html.anim .card,html.anim .phase{border-top-color:transparent!important;position:relative}
+html.anim .card::before,html.anim .phase::before{content:"";position:absolute;left:0;right:0;top:-2px;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease-out);transition-delay:calc(var(--d,0s) + .2s)}
+html.anim .phase::before{top:-8px;height:8px}
+html.anim .phase.go::before{background:var(--accent)}
+html.anim .phase.yl::before{background:var(--yellow)}
+html.anim .dk .card::before{background:rgba(255,255,255,.35)}
+html.anim .seen .card::before,html.anim .seen .phase::before{transform:scaleX(1)}
+html.anim .kpi-strip,html.anim .bars,html.anim .market-band,html.anim .divider .inside{border-top-color:transparent!important;position:relative}
+html.anim .kpi-strip::before,html.anim .bars::before,html.anim .market-band::before,html.anim .divider .inside::before{content:"";position:absolute;left:0;right:0;top:-2px;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--ease-out) .3s}
+html.anim .market-band::before{height:3px;top:-3px}
+html.anim .dk .kpi-strip::before,html.anim .dk .market-band::before,html.anim .divider .inside::before{background:rgba(255,255,255,.3)}
+html.anim .seen .kpi-strip::before,html.anim .seen .bars::before,html.anim .seen .market-band::before,html.anim .seen .divider .inside::before{transform:scaleX(1)}
+
+/* KPI values pop as they count */
+html.anim .kpi-strip .val,html.anim .eb-stats b,html.anim .dstat b,html.anim .market-band b{transition:transform .5s var(--ease-out)}
+.counting{font-variant-numeric:tabular-nums}
+
+/* cover */
+html.anim .cover-fig{border-top-color:transparent;position:relative}
+html.anim .cover-fig::before{content:"";position:absolute;left:0;right:0;top:-8px;height:8px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease-out) .5s}
+html.anim .seen .cover-fig::before{transform:scaleX(1)}
+html.anim .cover .mega{text-shadow:0 0 0 rgba(246,139,31,0)}
+html.anim .seen.cover .mega{animation:glow 3.6s ease-in-out 2s infinite}
+@keyframes glow{50%{text-shadow:0 0 38px rgba(246,139,31,.35)}}
+
+/* section dividers: number lands, yellow digit drops in */
+html.anim .divider .dnum{opacity:0;transform:scale(.7) translateY(30px);transform-origin:left bottom;transition:opacity .6s ease,transform 1.1s var(--ease-out)}
+html.anim .divider .dnum span{display:inline-block;transform:translateY(-60%);opacity:0;transition:transform 1s var(--ease-out) .35s,opacity .5s ease .35s}
+html.anim .seen.divider .dnum{opacity:1;transform:none}
+html.anim .seen.divider .dnum span{transform:none;opacity:1}
+html.anim .divider .inside div{opacity:0;transform:translateX(-18px);transition:opacity .5s ease,transform .6s var(--ease-out);transition-delay:calc(var(--d,0s) + .3s)}
+html.anim .seen.divider .inside div{opacity:1;transform:none}
+
+/* bars, gauges, columns */
+html.anim .bar .fill{width:0!important;transition:width 1.4s var(--ease-out) .45s}
+html.anim .seen .bar .fill{width:var(--w)!important}
+html.anim .bar .fill::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-100%)}
+html.anim .seen .bar .fill::after{animation:sheen 1.6s ease 1.8s}
+@keyframes sheen{to{transform:translateX(100%)}}
+.gauge i{transition:width 1.4s var(--ease-out);transition-delay:calc(var(--d,0s) + .45s)}
+html.anim .gauge .self{flex:0 0 auto}
+html.anim [data-slide]:not(.seen) .gauge .self{width:0!important}
+html.anim .vs .blk{transform:scaleY(0);transform-origin:bottom;transition:transform 1.3s var(--ease-out) .4s}
+html.anim .vs .col+.col .blk{transition-delay:.65s}
+html.anim .seen .vs .blk{transform:none}
+html.anim .vs .blk b{opacity:0;transition:opacity .5s ease 1.4s}
+html.anim .seen .vs .blk b{opacity:1}
+
+/* people icons pop one by one */
+html.anim .people i{transform:scale(0) translateY(20px);transition:transform .55s cubic-bezier(.34,1.56,.64,1)}
+html.anim .people i:nth-child(1){transition-delay:.5s}
+html.anim .people i:nth-child(2){transition-delay:.62s}
+html.anim .people i:nth-child(3){transition-delay:.74s}
+html.anim .people i:nth-child(4){transition-delay:.86s}
+html.anim .people i:nth-child(5){transition-delay:1.1s}
+html.anim .seen .people i{transform:none}
+
+/* channel chips: WhatsApp first, then the flows "copy" to each channel */
+html.anim .chip{opacity:0;transform:translateY(10px) scale(.9);transition:opacity .4s ease,transform .5s cubic-bezier(.34,1.56,.64,1)}
+html.anim .chip:nth-child(1){transition-delay:.4s}
+html.anim .chip:nth-child(2){transition-delay:.9s}
+html.anim .chip:nth-child(3){transition-delay:1.02s}
+html.anim .chip:nth-child(4){transition-delay:1.14s}
+html.anim .chip:nth-child(5){transition-delay:1.26s}
+html.anim .chip:nth-child(6){transition-delay:1.38s}
+html.anim .seen .chip{opacity:1;transform:none}
+html.anim .seen .chip:not(.on){animation:chipflash .9s ease forwards;animation-delay:inherit}
+html.anim .seen .chip:nth-child(2){animation-delay:.9s}
+html.anim .seen .chip:nth-child(3){animation-delay:1.02s}
+html.anim .seen .chip:nth-child(4){animation-delay:1.14s}
+html.anim .seen .chip:nth-child(5){animation-delay:1.26s}
+html.anim .seen .chip:nth-child(6){animation-delay:1.38s}
+@keyframes chipflash{0%{background:var(--yellow)}100%{background:transparent}}
+
+/* phone: conversation plays out with typing indicators */
+html.anim .phone{transform:translateY(40px) rotate(-3deg);opacity:0;transition:transform 1.1s var(--ease-out) .2s,opacity .6s ease .2s}
+html.anim .seen .phone{transform:none;opacity:1}
+html.anim .ph-b>*{opacity:0;transform:translateY(10px) scale(.96);transform-origin:left bottom;transition:opacity .35s ease,transform .45s var(--ease-out);transition-delay:var(--t,0s)}
+html.anim .ph-b>.u{transform-origin:right bottom}
+html.anim .seen .ph-b>*{opacity:1;transform:none}
+.typing{display:flex;flex-shrink:0;gap:4px;align-items:center;background:#fff;border-radius:12px;border-bottom-left-radius:3px;padding:10px 12px;width:max-content;overflow:hidden}
+.typing i{width:6px;height:6px;border-radius:50%;background:#9aa6b5;display:block}
+html.anim .typing{max-height:0;padding-top:0;padding-bottom:0;margin-top:-7px}
+html.anim .seen .typing{animation:typing 1s ease forwards;animation-delay:var(--t,0s)}
+html.anim .seen .typing i{animation:dot 1s ease-in-out infinite}
+.typing i:nth-child(2){animation-delay:.15s!important}.typing i:nth-child(3){animation-delay:.3s!important}
+@keyframes typing{0%{max-height:0;padding-top:0;padding-bottom:0;margin-top:-7px}12%,80%{max-height:30px;padding-top:10px;padding-bottom:10px;margin-top:0}100%{max-height:0;padding-top:0;padding-bottom:0;margin-top:-7px;opacity:0}}
+@keyframes dot{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-3px);opacity:1}}
+html.anim .tagline{opacity:0;transition:opacity .6s ease 6.6s}
+html.anim .seen .tagline{opacity:1}
+
+/* awards: gold shimmer on the CapeBPO card */
+.award.hero{position:relative;overflow:hidden}
+.award.hero::after{content:"";position:absolute;inset:-20% auto -20% -60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg)}
+html.anim .seen .award.hero::after{animation:shimmer 3.8s ease-in-out 1.4s infinite}
+@keyframes shimmer{0%{left:-60%}45%,100%{left:130%}}
+
+/* "1 in 3" emphasis */
+html.anim .impact-figure{display:inline-block}
+html.anim .seen .impact-figure{animation:pulse 3s ease-in-out 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.04)}}
+
+/* fibre light network behind dark slides (SVG injected by JS) */
+.fibre{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
+.fibre path{fill:none;stroke-linecap:round}
+.fibre .base{stroke:rgba(255,255,255,.06);stroke-width:1.2}
+.fibre .pulse{stroke-width:2.2;stroke-dasharray:90 1900;stroke-dashoffset:1990;filter:drop-shadow(0 0 6px currentColor)}
+.fibre .pulse.c{stroke:rgba(255,255,255,.85);color:#fff}
+.fibre .pulse.y{stroke:#F68B1F;color:#F68B1F}
+.fibre .node{fill:#FFB066;opacity:.0}
+html.anim .seen .fibre .pulse{animation:flow var(--dur,7s) linear var(--del,0s) infinite}
+html.anim .seen .fibre .node{animation:node 4s ease-in-out var(--del,0s) infinite}
+@keyframes flow{to{stroke-dashoffset:0}}
+@keyframes node{0%,100%{opacity:0;r:2}50%{opacity:.8;r:4}}
+html.anim .fibre{opacity:0;transition:opacity 1.6s ease}
+html.anim .seen .fibre{opacity:.9}
+
+/* chrome polish */
+.scroll-progress{box-shadow:0 0 12px rgba(246,139,31,.6)}
+
+@media (prefers-reduced-motion:reduce){
+  html.anim *,html.anim *::before,html.anim *::after{transition:none!important;animation:none!important}
+  html.anim .a-in,html.anim .eyebrow,html.anim .w>span,html.anim .phone,html.anim .ph-b>*,html.anim .chip,html.anim .divider .dnum,html.anim .divider .dnum span,html.anim .divider .inside div,html.anim .tagline{opacity:1!important;transform:none!important;filter:none!important}
+  html.anim .card::before,html.anim .phase::before,html.anim .kpi-strip::before,html.anim .bars::before,html.anim .market-band::before,html.anim .cover-fig::before,html.anim .divider .inside::before,html.anim .vs .blk,html.anim .people i{transform:none!important}
+  html.anim .bar .fill{width:var(--w)!important}
+  html.anim .typing{display:none}
+}
+@media print{html.anim *{opacity:1!important;transform:none!important;filter:none!important}html.anim .bar .fill{width:var(--w)!important}}
+
+.market-band{position:relative;z-index:1}
+.bar .fill{width:var(--w)}
+
+/* ---------- chrome (deck-kit contract) ---------- */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--yellow);z-index:80}
+.side-nav{position:fixed;right:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:11px;z-index:80}
+.side-nav a{width:7px;height:7px;border-radius:50%;background:rgba(120,140,165,.5);display:block;transition:all .2s}
+.side-nav a:hover{background:rgba(120,140,165,.9)}
+.side-nav a.active{background:var(--accent-lt);transform:scale(1.5)}
+.present-toggle{position:fixed;bottom:26px;right:26px;z-index:80;background:var(--yellow);color:#fff;font-weight:600;border:none;padding:.7rem 1.2rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.present-toggle:hover{background:var(--accent-lt)}
+.present-controls{position:fixed;bottom:26px;left:50%;transform:translate(-50%,calc(100% + 60px));display:flex;align-items:center;gap:1.1rem;background:rgba(17,20,24,.94);color:#fff;padding:.65rem 1.3rem;z-index:90;transition:transform .32s ease}
+.present-controls.show{transform:translate(-50%,0)}
+.present-controls button{background:none;border:none;color:#fff;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;padding:.2rem .4rem}
+.present-controls button:hover{color:var(--yellow)}
+.present-controls span{font-family:var(--mono);font-size:.72rem}
+.nav-hint{position:fixed;bottom:26px;left:26px;font-family:var(--mono);font-size:.7rem;letter-spacing:.03em;opacity:0;color:var(--ink);background:#fff;padding:.55rem .9rem;box-shadow:0 6px 20px rgba(17,20,24,.16);transition:opacity .35s;z-index:80;pointer-events:none}
+.nav-hint.visible{opacity:.92}
+body.present{overflow:hidden}
+body.present [data-slide]{position:fixed;inset:0;opacity:0;pointer-events:none;transition:opacity .45s ease;overflow-y:auto;z-index:1}
+body.present [data-slide].is-current{opacity:1;pointer-events:auto;z-index:2}
+body.present .scroll-progress,body.present .side-nav,body.present .nav-hint,body.present .present-toggle{display:none}
+
+@media(max-width:900px){
+  .cols-2,.cols-3,.cols-4,.two-col,.phase-row,.cover-grid,.exec-band,.eb-stats,.market-band,.divider .slide-inner{grid-template-columns:1fr!important}
+  .market-band .mb+.mb{border-left:none;padding-left:0}
+  [data-slide]::before{left:1.25rem;right:1.25rem;top:2.2vh;font-size:.5rem}
+  [data-slide]{padding:10vh 1.25rem 8vh}
+  .slide-logos{right:1.25rem;top:calc(2.2vh - 8px)}.slide-logos img{height:12px}.slide-logos .sl-ft{height:15px}
+  .divider .dnum{font-size:8rem}
+  .bar{grid-template-columns:1fr 70px}.bar .trk{grid-column:1/-1;grid-row:2}
+  .side-nav,.nav-hint{display:none!important}
+}
+@media print{
+  .scroll-progress,.side-nav,.present-toggle,.present-controls,.nav-hint{display:none}
+  [data-slide]{page-break-after:always}
+  html.anim .a-in{opacity:1;transform:none}
+}
+
+/* ---------- PIN gate ---------- */
+.deck-gate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:flex-start;padding:1.5rem 7vw;background:radial-gradient(circle at 82% 14%,#0B4C93 0%,#00264F 46%,#000F22 100%);color:#fff;overflow:hidden;transition:opacity .6s ease,visibility .6s}
+.deck-gate.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.deck-gate::before{content:"CXG \00a0\00b7\00a0 QContact \00a0\00b7\00a0 Prepared for Access Bank \00a0\00b7\00a0 Confidential";position:absolute;left:7vw;right:7vw;top:3.4vh;font-family:var(--grot);font-weight:600;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6);padding-bottom:.7rem;border-bottom:2px solid rgba(255,255,255,.35)}
+.deck-gate .gate-big{position:absolute;right:6vw;bottom:5vh;font-family:var(--grot);font-weight:800;letter-spacing:-.06em;line-height:.85;font-size:clamp(6rem,18vw,17rem);color:rgba(255,255,255,.06);user-select:none;pointer-events:none}
+.deck-gate .gate-big span{color:rgba(246,139,31,.18)}
+.deck-gate .gate-card{position:relative;z-index:1;width:100%;max-width:480px;border:1px solid rgba(255,255,255,.18);border-left:8px solid var(--yellow);background:rgba(12,12,15,.78);backdrop-filter:blur(8px);padding:2.2rem 2rem;animation:gateIn .9s var(--ease-out,ease) both}
+@keyframes gateIn{from{opacity:0;transform:translateY(24px)}}
+.deck-gate .gate-logos{display:flex;align-items:center;gap:10px;margin-bottom:1.7rem;flex-wrap:nowrap}
+.deck-gate .gate-logos img{height:18px;width:auto}
+.deck-gate .gate-logos .ft{height:28px}
+.deck-gate .gate-logos .div{width:1px;height:22px;background:rgba(255,255,255,.3)}
+.deck-gate .gate-logos .mem{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.deck-gate .gate-eyebrow{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-lt);margin-bottom:.8rem}
+.deck-gate h1{font-size:1.8rem;letter-spacing:-.035em;line-height:1.05;margin:0 0 .6rem;color:#fff}
+.deck-gate .gate-sub{font-size:.92rem;margin:0 0 1.5rem;color:rgba(255,255,255,.75)}
+.deck-gate input.gate-pin{width:100%;height:58px;text-align:center;font-family:var(--grot);font-size:1.6rem;font-weight:700;letter-spacing:.6em;text-indent:.6em;color:var(--navy);background:#fff;border:2px solid #fff;border-radius:0;outline:none}
+.deck-gate input.gate-pin:focus-visible{border-color:var(--accent-lt);box-shadow:0 0 0 3px rgba(246,139,31,.35)}
+.deck-gate input.gate-pin.error{border-color:#FF5A5F;animation:shake .4s ease}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.deck-gate .gate-msg{min-height:1.25rem;margin:.7rem 0 1.1rem;font-family:var(--mono);font-size:.7rem}
+.deck-gate .gate-hint{color:rgba(255,255,255,.55)}
+.deck-gate .gate-err{color:#FF8A8E;font-weight:600}
+.deck-gate button{width:100%;height:52px;font-family:var(--mono);font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#1d1206;background:var(--yellow);border:none;border-radius:0;cursor:pointer}
+.deck-gate button:hover{background:var(--accent-lt)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+body.gate-open{overflow:hidden}
+body.gate-open .present-toggle,body.gate-open .side-nav,body.gate-open .nav-hint,body.gate-open .scroll-progress,body.gate-open .present-controls{display:none}
+@media print{.deck-gate{display:none}}
+
+/* ---------- Access Bank additions: pricing options, SLA table, Access mark ---------- */
+.ab-mark{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--grot);font-weight:700;font-size:.95rem;letter-spacing:-.01em}
+.ab-mark i{display:block;width:26px;height:26px;border-radius:50%;background:conic-gradient(var(--ab-orange) 0 25%,#00387A 0 100%);box-shadow:inset 0 0 0 5px #fff}
+.dk .ab-mark i{box-shadow:inset 0 0 0 5px #00264F}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:28px;margin-top:1.8rem}
+.opt{border-top:8px solid var(--ink);padding-top:1.1rem}
+.opt.mid{border-top-color:var(--accent)}
+.opt.big{border-top-color:var(--ab-orange)}
+.opt .tag{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.opt .seats{font-family:var(--grot);font-weight:800;font-size:clamp(2.6rem,4.4vw,4rem);letter-spacing:-.05em;line-height:1}
+.opt .seats small{font-size:.32em;letter-spacing:0;color:var(--mute);margin-left:.3rem}
+.opt dl{margin:1.1rem 0 0;border-top:1px solid var(--line)}
+.opt dl div{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.opt dt{font-size:.86rem;color:var(--ink-soft)}
+.opt dd{margin:0;font-family:var(--grot);font-weight:800;font-size:1.05rem;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.opt dd.acc{color:var(--accent)}
+.sla{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.9rem}
+.sla th{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-align:left;padding:.5rem 0;border-bottom:2px solid var(--ink)}
+.sla td{padding:.6rem 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.sla td:first-child{font-weight:700}
+.feat{columns:2;column-gap:28px;margin:1rem 0 0;padding:0;list-style:none}
+.feat li{break-inside:avoid;padding:.45rem 0;border-bottom:1px solid var(--line);font-size:.9rem;color:var(--ink)}
+.feat li b{font-family:var(--grot)}
+.dk .feat li{color:#fff;border-bottom-color:rgba(255,255,255,.14)}
+@media(max-width:900px){.price-grid{grid-template-columns:1fr;row-gap:2rem}.feat{columns:1}}
+</style>
+<script>
+ /* Motion layer. Adds .seen to a slide when it enters view (scroll mode) or becomes
+    the current slide (presenter mode), and replays it each time. Also splits
+    headlines into words, counts figures up, and draws the fibre network. */
+ document.documentElement.classList.add('anim');
+ document.addEventListener('DOMContentLoaded', () => {
+ const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const slides = [...document.querySelectorAll('[data-slide]')];
+
+ // 1. Split h1/h2 into words, keeping <em> accents intact.
+ document.querySelectorAll('[data-slide] h1, [data-slide] h2').forEach(h => {
+ let i = 0;
+ const walk = (node) => {
+ [...node.childNodes].forEach(n => {
+ if (n.nodeType === 3) {
+ const frag = document.createDocumentFragment();
+ n.textContent.split(/(\s+)/).forEach(part => {
+ if (!part) return;
+ if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+ const w = document.createElement('span'); w.className = 'w';
+ const s = document.createElement('span'); s.style.setProperty('--wi', i++); s.textContent = part;
+ w.appendChild(s); frag.appendChild(w);
+ });
+ n.replaceWith(frag);
+ } else if (n.nodeType === 1) walk(n);
+ });
+ };
+ walk(h);
+ });
+
+ // 2. Count-up figures. Reads the first text node of each figure and animates its number.
+ const figSel = '.kpi-strip .val, .eb-stats b, .dstat b, .market-band b, .mega:not(.impact-figure), .vs .blk b';
+ const counters = [];
+ document.querySelectorAll(figSel).forEach(el => {
+ const tn = [...el.childNodes].find(n => n.nodeType === 3 && /\d/.test(n.textContent));
+ if (!tn || el.closest('.no-count') || /\/|\dx\d|:/.test(el.textContent)) return;
+ const m = tn.textContent.match(/^(\D*?)(\d[\d,]*\.?\d*)(.*)$/s);
+ if (!m) return;
+ const raw = m[2], comma = raw.includes(','), dec = (raw.split('.')[1] || '').length;
+ const target = parseFloat(raw.replace(/,/g, ''));
+ if (!target) return;
+ const fmt = (v) => {
+ let s = v.toFixed(dec);
+ if (comma) { const [a, b] = s.split('.'); s = a.replace(/\B(?=(\d{3})+(?!\d))/g, ',') + (b ? '.' + b : ''); }
+ return m[1] + s + m[3];
+ };
+ counters.push({ el, tn, target, fmt, final: tn.textContent, slide: el.closest('[data-slide]') });
+ });
+ const resetCounters = (slide) => counters.filter(c => c.slide === slide).forEach(c => { cancelAnimationFrame(c.raf); clearTimeout(c.to); c.tn.textContent = c.fmt(0); });
+ const runCounters = (slide) => counters.filter(c => c.slide === slide).forEach(c => {
+ cancelAnimationFrame(c.raf); clearTimeout(c.to);
+ if (reduce) { c.tn.textContent = c.final; return; }
+ const host = c.el.closest('[style*="--d"]');
+ const delay = 350 + (host ? parseFloat(getComputedStyle(host).getPropertyValue('--d')) * 1000 || 0 : 0);
+ c.tn.textContent = c.fmt(0); c.el.classList.add('counting');
+ c.to = setTimeout(() => {
+ const t0 = performance.now(), dur = 1500;
+ const tick = (t) => {
+ const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(2, -10 * p);
+ c.tn.textContent = p < 1 ? c.fmt(c.target * e) : c.final;
+ if (p < 1) c.raf = requestAnimationFrame(tick); else c.el.classList.remove('counting');
+ };
+ c.raf = requestAnimationFrame(tick);
+ }, delay);
+ });
+
+ // 3. Fibre network behind dark slides: light pulses travel along curved strands.
+ if (!reduce) {
+ const NS = 'http://www.w3.org/2000/svg';
+ document.querySelectorAll('.dk, .divider').forEach((sec, k) => {
+ const svg = document.createElementNS(NS, 'svg');
+ svg.setAttribute('class', 'fibre'); svg.setAttribute('viewBox', '0 0 1440 900'); svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+ for (let i = 0; i < 7; i++) {
+ const y0 = 120 + ((i * 131 + k * 47) % 700), y1 = 80 + ((i * 197 + k * 89) % 760);
+ const d = `M-40 ${y0} C 360 ${y0 + (i % 2 ? 180 : -160)}, 1060 ${y1 + (i % 2 ? -200 : 170)}, 1480 ${y1}`;
+ const base = document.createElementNS(NS, 'path'); base.setAttribute('d', d); base.setAttribute('class', 'base'); svg.appendChild(base);
+ const p = document.createElementNS(NS, 'path'); p.setAttribute('d', d); p.setAttribute('class', 'pulse ' + (i % 3 === 0 ? 'y' : 'c'));
+ p.style.setProperty('--dur', (6 + (i * 1.3) % 5).toFixed(1) + 's'); p.style.setProperty('--del', (-(i * 1.7) % 6).toFixed(1) + 's');
+ svg.appendChild(p);
+ const c = document.createElementNS(NS, 'circle'); c.setAttribute('class', 'node');
+ c.setAttribute('cx', 220 + (i * 173) % 1000); c.setAttribute('cy', 140 + (i * 113 + k * 61) % 620); c.setAttribute('r', 2);
+ c.style.setProperty('--del', (i * .6).toFixed(1) + 's'); svg.appendChild(c);
+ }
+ sec.insertBefore(svg, sec.firstChild);
+ });
+ }
+
+ // 4. Play and replay.
+ const play = (s) => { s.classList.remove('seen'); void s.offsetWidth; s.classList.add('seen'); runCounters(s); };
+ const reset = (s) => { s.classList.remove('seen'); resetCounters(s); };
+ slides.forEach(s => { if (!reduce) resetCounters(s); });
+ const presenting = () => document.body.classList.contains('present');
+ const io = new IntersectionObserver((es) => es.forEach(e => {
+ if (presenting()) return;
+ if (e.isIntersecting && e.intersectionRatio >= 0.25) { if (!e.target.classList.contains('seen')) play(e.target); }
+ else if (!e.isIntersecting) reset(e.target);
+ }), { threshold: [0, 0.25] });
+ slides.forEach(s => io.observe(s));
+ const cur = new WeakMap();
+ const mo = new MutationObserver(() => slides.forEach(s => {
+ const now = s.classList.contains('is-current'), was = cur.get(s) || false;
+ if (now === was) return;
+ cur.set(s, now);
+ if (now && presenting()) play(s); else if (!now && presenting()) reset(s);
+ }));
+ slides.forEach(s => mo.observe(s, { attributes: true, attributeFilter: ['class'] }));
+ new MutationObserver(() => { if (!presenting()) slides.forEach(s => { const r = s.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) play(s); }); })
+ .observe(document.body, { attributes: true, attributeFilter: ['class'] });
+ });
+</script>
+</head>
+<body>
+<div class="scroll-progress" id="progress"></div>
+<nav class="side-nav" id="sideNav"></nav>
+<button class="present-toggle" id="presentToggle">Present</button>
+<div class="present-controls" id="presentControls">
+  <button id="prevBtn">◀ Previous</button>
+  <span id="presentCounter">1 / 1</span>
+  <button id="nextBtn">Next ▶</button>
+  <button id="exitBtn">✕ Exit</button>
+</div>
+<div class="nav-hint" id="navHint">← → to move · F to present</div>
+<div class="deck-gate" id="deckGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-big" aria-hidden="true">60<span>M</span></div>
+  <form class="gate-card" id="gateForm" autocomplete="off">
+    <div class="gate-logos"><img src="cxg-white.png" alt="CXG" style="height:30px"><span class="mem">a member of</span><img src="dsg-white.png" alt="DSG"></div>
+    <div class="gate-eyebrow">Prepared for Access Bank · Confidential</div>
+    <h1 id="gateTitle">CXG and QContact for Access Bank contact centres</h1>
+    <p class="gate-sub">Enter the 4-digit PIN to open this deck.</p>
+    <label class="sr-only" for="gatePin">PIN</label>
+    <input class="gate-pin" id="gatePin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" autofocus>
+    <div class="gate-msg" id="gateMsg"><span class="gate-hint">Ask your CXG contact for the PIN.</span></div>
+    <button type="submit">Open deck</button>
+  </form>
+</div>
+<script>
+ /* PIN gate. Stores only a SHA-256 hash of the PIN. Unlock lasts for the browser session. */
+ (function () {
+ const HASH = '158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab';
+ const KEY = 'access_qcontact_unlocked';
+ const gate = document.getElementById('deckGate'), form = document.getElementById('gateForm');
+ const pin = document.getElementById('gatePin'), msg = document.getElementById('gateMsg');
+ let ok = false; try { ok = sessionStorage.getItem(KEY) === HASH; } catch (e) {}
+ if (ok) { gate.classList.add('hidden'); return; }
+ document.body.classList.add('gate-open');
+ // Stop deck keys (arrows, F, space) while the gate is showing.
+ window.addEventListener('keydown', (e) => { if (document.body.classList.contains('gate-open') && e.target !== pin && e.key !== 'Tab') { e.stopImmediatePropagation(); } }, true);
+ pin.addEventListener('keydown', (e) => { if (e.key !== 'Enter') e.stopImmediatePropagation(); });
+ async function sha(s) { const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join(''); }
+ pin.addEventListener('input', () => { pin.value = pin.value.replace(/\D/g, '').slice(0, 4); pin.classList.remove('error'); if (pin.value.length === 4) form.requestSubmit(); });
+ form.addEventListener('submit', async (e) => {
+ e.preventDefault();
+ if ((await sha(pin.value)) === HASH) {
+ try { sessionStorage.setItem(KEY, HASH); } catch (err) {}
+ gate.classList.add('hidden'); document.body.classList.remove('gate-open'); pin.blur(); window.scrollTo(0, 0);
+ } else {
+ pin.classList.remove('error'); void pin.offsetWidth; pin.classList.add('error');
+ msg.innerHTML = '<span class="gate-err">That PIN is not correct. Please try again.</span>';
+ pin.value = ''; pin.focus();
+ }
+ });
+ })();
+</script>
+
+<section class="slide cover no-index dk" data-slide="CXG and QContact for Access Bank">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-white.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-white.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <div class="cover-grid">
+      <div>
+        <span class="eyebrow">Prepared for Access Bank</span>
+        <h1>Human expertise and AI for <em>60 million customers.</em></h1>
+        <p class="lede a-in">CXG and QContact can support Access Bank's contact centres with one platform for every channel, AI built in, and a team that configures, supports and runs it. This deck sets out the platform and three seat options for the proposal.</p>
+        <div class="cover-id a-in" style="--d:.06s"><img src="cxg-white.png" alt="CXG Customer Experience Group"><span class="mem">a member of</span><img src="dsg-white.png" alt="DSG Digital Solutions Group"></div>
+      </div>
+      <div class="cover-fig a-in" style="--d:0.12s">
+        <div class="mega">60M+</div>
+        <p>Access Bank customers. Every option in this deck is sized against this customer base.</p>
+      </div>
+    </div>
+  </div>
+  <div class="market-band">
+    <div class="mb a-in" style="--d:0.18s"><span>Access Bank customer base</span><b class="no-count">60 million+</b></div>
+    <div class="mb a-in" style="--d:0.24s"><span>Proposal options</span><b class="no-count">750 · 1,000 · 1,500 seats</b></div>
+    <div class="mb a-in" style="--d:0.30s"><span>Indicative price per seat per month</span><b class="acc">£57</b></div>
+    <div class="mb a-in" style="--d:0.36s"><span>AI features included as standard</span><b>20+</b></div>
+  </div>
+</section>
+
+<section class="slide " data-slide="Introduction">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">01 · Introduction</span>
+    <h2>People and AI, <em>working together.</em></h2>
+    <p class="lede a-in">This deck sets out how CXG and QContact can support Access Bank's contact centres by combining human interaction with AI.</p>
+    <div class="card-grid cols-3">
+      <div class="card a-in" style="--d:0.06s"><span class="tag">01 · What we offer</span><h4>How CXG and QContact work together</h4><p>One platform for every channel, AI built into every seat, and a team that configures, supports and runs it.</p></div>
+      <div class="card a-in" style="--d:0.12s"><span class="tag">02 · What this deck covers</span><h4>The detail for a proposal</h4><p>The platform, the AI suite, security, service levels, pricing and the path to go-live for a bank of Access Bank's size.</p></div>
+      <div class="card a-in" style="--d:0.18s"><span class="tag">03 · What comes next</span><h4>Three proposal options</h4><p>Based on more than 60 million customers, we have sized options at 750, 1,000 and 1,500 seats.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide " data-slide="At a glance">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">02 · At a glance</span>
+    <h2>The proposal <em>on one page.</em></h2>
+    <div class="card-grid cols-3">
+      <div class="card a-in"><span class="tag">01 · The platform</span><h4>QContact, one platform for every channel</h4><p>Voice, WhatsApp, live chat, email, SMS and social media run in one place, with CRM, ticketing, workforce management and quality assurance built in.</p></div>
+      <div class="card a-in" style="--d:0.06s"><span class="tag">02 · The AI</span><h4>Communication AI built in</h4><p>More than 20 AI features are included in the seat price. Agentic AI handles routine conversations 24/7 and passes the rest to a person with full context.</p></div>
+      <div class="card a-in" style="--d:0.12s"><span class="tag">03 · The team</span><h4>CXG configures, supports and runs it</h4><p>CXG has 28 years of contact centre experience. CXG sets up QContact, trains your people and supports the platform day to day.</p></div>
+      <div class="exec-band a-in" style="--d:0.18s">
+        <div><span class="mono" style="display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">04 · Indicative pricing</span><h4>£57 per seat per month</h4><p style="margin:0">Monthly platform fees at each seat option. Usage-based items are quoted separately.</p></div>
+        <div class="eb-stats"><div><b>£42,750</b><span>750 seats</span></div><div><b>£57,000</b><span>1,000 seats</span></div><div><b>£85,500</b><span>1,500 seats</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide divider" data-slide="Section 01: CXG and QContact together">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-white.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-white.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <div><div class="dnum">0<span>1</span></div></div>
+    <div>
+      <span class="eyebrow">CXG and QContact for Access Bank · Section 01</span>
+      <h2>CXG and QContact together</h2>
+      <p class="lede a-in" style="--d:0.06s">One partner provides the platform, the set-up and the support.</p>
+      <div class="inside"><div style="--d:0.12s"><b>01</b><span>Who CXG is</span></div><div style="--d:0.18s"><b>02</b><span>The QContact platform</span></div><div style="--d:0.24s"><b>03</b><span>Every channel in one place</span></div></div>
+      <div class="dstat"><div class="a-in" style="--d:0.36s"><b>28</b><span>Years in CX</span></div><div class="a-in" style="--d:0.42s"><b>~1,000</b><span>CX specialists</span></div><div class="a-in" style="--d:0.48s"><b>10</b><span>Channels out of the box</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide " data-slide="Who CXG is">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">03 · Who CXG is</span>
+    <h2>CXG runs contact centres <em>and the platform behind them.</em></h2>
+    <p class="lede a-in">CXG is a Cape Town contact centre business and a member of DSG. CXG configures, supports and runs QContact for its own operations and for clients.</p>
+    <div class="card-grid cols-4">
+      <div class="card a-in" style="--d:0.06s"><span class="tag">Experience</span><h4>28 years in CX</h4><p>About 1,000 CX specialists handle millions of interactions a month for South African and UK clients.</p></div>
+      <div class="card a-in" style="--d:0.12s"><span class="tag">Banking</span><h4>Financial services is a core line</h4><p>Banking and financial services is one of CXG&#39;s six service lines.</p></div>
+      <div class="card a-in" style="--d:0.18s"><span class="tag">Platform</span><h4>QContact operator and partner</h4><p>CXG uses QContact every day in live operations, so we know how it performs at scale.</p></div>
+      <div class="card a-in" style="--d:0.24s"><span class="tag">Assurance</span><h4>GBPO accredited</h4><p>CXG holds GBPO, BPESA and CapeBPO accreditations and has had no security incidents in the last five years.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide lt" data-slide="The QContact platform">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">04 · The QContact platform</span>
+    <h2>One platform gives agents <em>a single view of the customer.</em></h2>
+    <div class="two-col" style="grid-template-columns:1.1fr .9fr;gap:4rem;margin-top:1.2rem">
+      <div>
+        <p class="lede a-in">QContact brings channels, customer records and back-office systems into one screen. Agents stop switching between systems, and every conversation sits on one timeline.</p>
+        <span class="mono a-in" style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-top:1.4rem">Channels included at no extra fee</span>
+        <div class="chips"><span class="chip on">Voice</span><span class="chip">WhatsApp</span><span class="chip">Live chat</span><span class="chip">Email</span><span class="chip">SMS</span><span class="chip">Facebook</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">Web forms</span><span class="chip">Reviews</span></div>
+      </div>
+      <div>
+        <ul class="feat a-in" style="columns:1">
+          <li><b>Built-in CRM and ticketing</b>, or links to Dynamics, Salesforce, SAP C4C, ServiceNow and Zendesk</li>
+          <li><b>Workforce management</b> for forecasting, scheduling and adherence</li>
+          <li><b>Quality assurance</b> scorecards across every channel</li>
+          <li><b>Automated workflows</b> with a low-code builder</li>
+          <li><b>Self-service and IVR</b> built with drag and drop</li>
+          <li><b>Real-time reporting</b>, wallboards and data sync to Power BI</li>
+          <li><b>Open APIs</b> to connect Access Bank core and card systems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide divider" data-slide="Section 02: People and AI working together">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-white.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-white.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <div><div class="dnum">0<span>2</span></div></div>
+    <div>
+      <span class="eyebrow">CXG and QContact for Access Bank · Section 02</span>
+      <h2>People and AI working together</h2>
+      <p class="lede a-in" style="--d:0.06s">AI handles the routine work. Your people handle the conversations that need judgement and care.</p>
+      <div class="inside"><div style="--d:0.12s"><b>01</b><span>Communication AI included as standard</span></div><div style="--d:0.18s"><b>02</b><span>Agentic AI for routine conversations</span></div><div style="--d:0.24s"><b>03</b><span>Hannah, chat to support and commerce</span></div></div>
+      <div class="dstat"><div class="a-in" style="--d:0.36s"><b>20+</b><span>AI features included</span></div><div class="a-in" style="--d:0.42s"><b>24/7</b><span>AI agent coverage</span></div><div class="a-in" style="--d:0.48s"><b>100+</b><span>Languages for translation</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide " data-slide="Communication AI">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">05 · Communication AI</span>
+    <h2>More than 20 AI features <em>come with every seat.</em></h2>
+    <p class="lede a-in">QContact's Communication AI (CAI) is built into the platform. These features carry no usage fees.</p>
+    <div class="card-grid cols-4">
+      <div class="card a-in" style="--d:0.06s"><span class="tag">Every conversation</span><h4>Summaries and transcription</h4><p>CAI summarises every call, chat and case, and transcribes every call.</p></div>
+      <div class="card a-in" style="--d:0.12s"><span class="tag">Every customer</span><h4>Automatic CSAT and sentiment</h4><p>CAI rates every conversation for satisfaction and sentiment, so coverage reaches 100% of contacts.</p></div>
+      <div class="card a-in" style="--d:0.18s"><span class="tag">Every agent</span><h4>Copilot and suggested replies</h4><p>Agents get drafted replies from the knowledge base. Managers ask questions about the contact centre in plain English.</p></div>
+      <div class="card a-in" style="--d:0.24s"><span class="tag">Every queue</span><h4>Categorisation and routing</h4><p>CAI tags the reason for contact, detects language and filters spam before a conversation reaches an agent.</p></div>
+    </div>
+    <p class="note a-in" style="--d:.3s">Also included: CAI Biometric voice authentication for users, CAI Clarity noise removal, knowledge articles generated from documents and conversations, and CAI MCP to connect QContact to Claude, ChatGPT or Gemini.</p>
+  </div>
+</section>
+
+<section class="slide lt" data-slide="Agentic AI">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">06 · Agentic AI</span>
+    <h2>AI agents resolve routine contacts <em>and hand the rest to a person.</em></h2>
+    <div class="two-col" style="grid-template-columns:1fr 1fr;gap:4rem;margin-top:1.2rem">
+      <div>
+        <p class="lede a-in">QContact's agentic AI handles voice and text conversations 24 hours a day. When a query needs a person, the AI transfers it to an agent with the full conversation attached.</p>
+        <div class="gauge a-in" style="--d:.1s"><i class="self" style="width:70%"></i><i class="agent" style="flex:1"></i></div>
+        <div class="gauge-l"><span>AI agent: routine, repeatable</span><span>Human agent: judgement, care</span></div>
+        <p class="note">Illustrative split. Access Bank and CXG would agree the journeys the AI handles before go-live.</p>
+      </div>
+      <div>
+        <div class="card a-in" style="--d:0.06s"><span class="tag">Fixed price</span><h4>One price per AI conversation</h4><p>Each AI-handled conversation is charged at a fixed rate, for voice or text. The proposal will set the rate for Access Bank.</p></div>
+        <div class="card a-in" style="--d:0.12s"><span class="tag">Scale</span><h4>No hard limit on concurrent conversations</h4><p>The platform scales with volume. CXG plans capacity with QContact ahead of known peaks, such as salary days.</p></div>
+        <div class="card a-in" style="--d:0.18s"><span class="tag">Languages</span><h4>Voice and text in over 100 languages</h4><p>Support for Yoruba, Hausa, Igbo and Nigerian Pidgin will be confirmed during the proposal stage.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide " data-slide="Hannah: chat to support and commerce">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">07 · Hannah</span>
+    <div class="two-col" style="grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center">
+      <div>
+        <h2>Meet Hannah, <em>CXG's chat to support and commerce assistant.</em></h2>
+        <p class="lede a-in">Hannah answers customers on WhatsApp and live chat. She resolves the service request first. Once the customer's need is met, she can offer a relevant product.</p>
+        <div class="card-grid cols-3" style="margin-top:1rem">
+          <div class="card a-in" style="--d:0.06s"><span class="tag">Stream 1</span><h4>Support</h4><p>Card blocking, transfer status, statements and branch finder.</p></div>
+          <div class="card a-in" style="--d:0.12s"><span class="tag">Stream 2</span><h4>Commerce</h4><p>Airtime top-up, account opening and product offers after service.</p></div>
+          <div class="card a-in" style="--d:0.18s"><span class="tag">Handoff</span><h4>A person when needed</h4><p>Hannah passes complex or sensitive cases to a CXG or Access Bank agent.</p></div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="scr">
+          <div class="ph-h"><div class="av"><span class="ab-mark"><i></i></span></div><div><b>Hannah · Access Bank</b><small>Online</small></div></div>
+          <div class="ph-b">
+            <div class="bub u" style="--t:.5s">Hi, I think I lost my debit card</div>
+            <div class="typing" style="--t:1s"><i></i><i></i><i></i></div>
+            <div class="bub" style="--t:2s">I'm sorry to hear that. I can block it now. Please confirm the last four digits of the card.</div>
+            <div class="bub u" style="--t:3s">4417</div>
+            <div class="typing" style="--t:3.5s"><i></i><i></i><i></i></div>
+            <div class="bub" style="--t:4.5s">Done. Your card ending 4417 is blocked. You can collect a replacement at your branch.</div>
+            <div class="menu" style="--t:5.4s"><div>Is there anything else I can help with?</div><div>Find my nearest branch</div><div>Buy airtime</div><div>Talk to an agent</div></div>
+          </div>
+        </div>
+        <div class="tagline">Illustrative conversation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide divider" data-slide="Section 03: Built for a bank of 60 million customers">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-white.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-white.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <div><div class="dnum">0<span>3</span></div></div>
+    <div>
+      <span class="eyebrow">CXG and QContact for Access Bank · Section 03</span>
+      <h2>Built for a bank of 60 million customers</h2>
+      <p class="lede a-in" style="--d:0.06s">A bank of Access Bank's size needs security, reliability and scale first.</p>
+      <div class="inside"><div style="--d:0.12s"><b>01</b><span>Security and compliance</span></div><div style="--d:0.18s"><b>02</b><span>Reliability and service levels</span></div><div style="--d:0.24s"><b>03</b><span>Seat options against the customer base</span></div></div>
+      <div class="dstat"><div class="a-in" style="--d:0.36s"><b>SOC2</b><span>Type II certified</span></div><div class="a-in" style="--d:0.42s"><b>99.999%</b><span>Availability achieved</span></div><div class="a-in" style="--d:0.48s"><b>256-bit</b><span>AES encryption</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide " data-slide="Security and compliance">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">08 · Security and compliance</span>
+    <h2>Security controls <em>meet banking standards.</em></h2>
+    <div class="card-grid cols-3">
+      <div class="card a-in" style="--d:0.06s"><span class="tag">Certification</span><h4>SOC2 Type II</h4><p>QContact holds SOC2 Type II certification, with annual penetration tests and audits.</p></div>
+      <div class="card a-in" style="--d:0.12s"><span class="tag">Encryption</span><h4>Data encrypted in transit and at rest</h4><p>FIPS 140-2 compliant 256-bit AES encryption protects all data.</p></div>
+      <div class="card a-in" style="--d:0.18s"><span class="tag">Access</span><h4>SSO, roles and IP restrictions</h4><p>Single sign-on with Microsoft Entra, ADFS or any SAML provider. Field-level permissions and two-factor authentication are included.</p></div>
+      <div class="card a-in" style="--d:0.24s"><span class="tag">Audit</span><h4>Full audit trail</h4><p>Every action, update and record view is logged.</p></div>
+      <div class="card a-in" style="--d:0.30s"><span class="tag">Recovery</span><h4>Geo-replicated backups</h4><p>Backups and recordings are stored in at least two separate regions.</p></div>
+      <div class="card a-in" style="--d:0.36s"><span class="tag">Residency</span><h4>Hosting agreed with Access Bank</h4><p>QContact runs on Microsoft Azure. Access Bank and CXG will agree the hosting region against Central Bank of Nigeria and Nigeria Data Protection Act requirements.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide lt" data-slide="Reliability and service levels">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">09 · Reliability and service levels</span>
+    <h2>QContact achieved <em>99.999% availability</em> over the past three years.</h2>
+    <div class="two-col" style="grid-template-columns:.9fr 1.1fr;gap:4rem;margin-top:1.2rem">
+      <div>
+        <p class="lede a-in">Every component runs in an active/active or active/standby setup across availability zones. An independent service monitors availability.</p>
+        <div class="kpi-strip" style="grid-template-columns:1fr 1fr">
+          <div class="a-in" style="--d:.06s"><div class="val hit">99%</div><div class="lbl">Contractual monthly uptime, with service credits</div></div>
+          <div class="a-in" style="--d:.12s"><div class="val">24/7</div><div class="lbl">Support for critical issues</div></div>
+        </div>
+      </div>
+      <div class="a-in" style="--d:.12s">
+        <table class="sla"><thead><tr><th>Severity</th><th>Response</th><th>Resolution</th></tr></thead><tbody>
+          <tr><td>Critical</td><td>15 minutes, 24/7</td><td>2 hours</td></tr>
+          <tr><td>Serious</td><td>30 minutes, 24/7</td><td>4 hours</td></tr>
+          <tr><td>Moderate</td><td>30 minutes</td><td>4 days</td></tr>
+          <tr><td>Minor</td><td>30 minutes</td><td>10 days</td></tr>
+        </tbody></table>
+        <p class="note">Current QContact contractual service levels. Support hours and cover for West Africa Time will be set in the proposal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide " data-slide="Seat options against 60 million customers">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">10 · Sizing</span>
+    <h2>Three seat options, <em>sized against 60 million customers.</em></h2>
+    <div class="two-col" style="grid-template-columns:1.2fr .8fr;gap:4rem;margin-top:1.4rem">
+      <div class="bars">
+        <div class="bar"><div class="lbl">Option 1 · 750 seats<small>1 seat per 80,000 customers</small></div><div class="trk"><div class="fill" style="--w:50%"></div></div><div class="val">750</div></div>
+        <div class="bar"><div class="lbl">Option 2 · 1,000 seats<small>1 seat per 60,000 customers</small></div><div class="trk"><div class="fill acc" style="--w:66.7%"></div></div><div class="val">1,000</div></div>
+        <div class="bar"><div class="lbl">Option 3 · 1,500 seats<small>1 seat per 40,000 customers</small></div><div class="trk"><div class="fill acc" style="--w:100%"></div></div><div class="val">1,500</div></div>
+      </div>
+      <div>
+        <div class="card a-in" style="--d:0.06s"><span class="tag">Billing</span><h4>Access Bank pays for peak daily use</h4><p>QContact counts unique users each day and bills at the busiest day of the month. Access Bank does not pay all year for licences it only needs in peak months.</p></div>
+        <div class="card a-in" style="--d:0.12s"><span class="tag">Mix</span><h4>Seats can cover Access Bank and CXG teams</h4><p>Access Bank staff, CXG agents or both can use the seats. The proposal will set out the mix.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide divider" data-slide="Section 04: Commercial options">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-white.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-white.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <div><div class="dnum">0<span>4</span></div></div>
+    <div>
+      <span class="eyebrow">CXG and QContact for Access Bank · Section 04</span>
+      <h2>Commercial options</h2>
+      <p class="lede a-in" style="--d:0.06s">Indicative pricing at £57 per seat per month for each option.</p>
+      <div class="inside"><div style="--d:0.12s"><b>01</b><span>Three pricing options</span></div><div style="--d:0.18s"><b>02</b><span>What the price includes</span></div><div style="--d:0.24s"><b>03</b><span>How we get to go-live</span></div></div>
+      <div class="dstat"><div class="a-in" style="--d:0.36s"><b>£57</b><span>Per seat per month</span></div><div class="a-in" style="--d:0.42s"><b>3</b><span>Seat options</span></div><div class="a-in" style="--d:0.48s"><b>12</b><span>Month minimum term</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide lt" data-slide="Pricing options">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">11 · Pricing options</span>
+    <h2>Three options at <em>£57 per seat per month.</em></h2>
+    <div class="price-grid">
+      <div class="opt  a-in" style="--d:.06s"><span class="tag">Option 1</span><div class="seats">750<small>seats</small></div>
+        <dl><div><dt>Price per seat per month</dt><dd>£57</dd></div><div><dt>Monthly fee</dt><dd class="acc">£42,750</dd></div><div><dt>Annual fee</dt><dd>£513,000</dd></div><div><dt>Customers per seat</dt><dd>80,000</dd></div></dl></div>
+      <div class="opt mid a-in" style="--d:.12s"><span class="tag">Option 2</span><div class="seats">1,000<small>seats</small></div>
+        <dl><div><dt>Price per seat per month</dt><dd>£57</dd></div><div><dt>Monthly fee</dt><dd class="acc">£57,000</dd></div><div><dt>Annual fee</dt><dd>£684,000</dd></div><div><dt>Customers per seat</dt><dd>60,000</dd></div></dl></div>
+      <div class="opt big a-in" style="--d:.18s"><span class="tag">Option 3</span><div class="seats">1,500<small>seats</small></div>
+        <dl><div><dt>Price per seat per month</dt><dd>£57</dd></div><div><dt>Monthly fee</dt><dd class="acc">£85,500</dd></div><div><dt>Annual fee</dt><dd>£1,026,000</dd></div><div><dt>Customers per seat</dt><dd>40,000</dd></div></dl></div>
+    </div>
+    <p class="note">Indicative pricing in GBP, excluding taxes. The annual fee assumes every seat is used for all 12 months. The proposal will confirm final pricing, term and currency.</p>
+  </div>
+</section>
+
+<section class="slide " data-slide="What the price includes">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">12 · What the price includes</span>
+    <h2>Every seat includes <em>every QContact feature.</em></h2>
+    <div class="two-col" style="margin-top:1.2rem">
+      <div>
+        <span class="mono a-in" style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)">Included in £57 per seat</span>
+        <ul class="feat a-in" style="columns:1">
+          <li>All 10 channels, CRM, ticketing and workflows</li>
+          <li>Workforce management and quality assurance</li>
+          <li>20+ Communication AI features</li>
+          <li>Call recording with 70GB storage per user</li>
+          <li>Initial training, end user or train the trainer</li>
+          <li>Dedicated account manager</li>
+          <li>Set-up, configuration and support from CXG</li>
+        </ul>
+      </div>
+      <div>
+        <span class="mono a-in" style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)">Usage-based, quoted in the proposal</span>
+        <ul class="feat a-in" style="columns:1;--d:.1s">
+          <li>Agentic AI, at a fixed fee per AI-handled conversation</li>
+          <li>Automated quality assurance, per conversation scored</li>
+          <li>Automatic translation, per character</li>
+          <li>Telephony numbers, call minutes and SMS, or Access Bank's own carrier</li>
+          <li>WhatsApp template message fees, passed on at cost</li>
+        </ul>
+        <p class="note">The usage-based items are optional. Access Bank chooses which departments use them and what share of conversations they cover.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide lt" data-slide="Path to go-live">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-dark.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-dark.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">13 · Path to go-live</span>
+    <h2>A phased path <em>from proposal to full scale.</em></h2>
+    <div class="phase-row">
+      <div class="phase a-in"><span class="w">Phase 1</span><h4>Discover</h4><p>Map Access Bank's contact reasons, volumes, channels and the systems the platform must connect to.</p></div>
+      <div class="phase a-in" style="--d:.06s"><span class="w">Phase 2</span><h4>Design and build</h4><p>CXG configures QContact, integrations, self-service flows and Hannah's first journeys.</p></div>
+      <div class="phase go a-in" style="--d:.12s"><span class="w">Phase 3</span><h4>Pilot</h4><p>A first group of seats goes live. Access Bank and CXG measure results against agreed targets.</p></div>
+      <div class="phase yl a-in" style="--d:.18s"><span class="w">Phase 4</span><h4>Scale</h4><p>Seats grow to the chosen option. AI journeys expand as results are proven.</p></div>
+    </div>
+    <p class="note">The proposal will set timelines for each phase once Access Bank confirms its requirements.</p>
+  </div>
+</section>
+
+<section class="slide dk" data-slide="Why CXG">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-white.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-white.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <span class="eyebrow">14 · Why CXG</span>
+    <h2>CXG, <em>a member of DSG.</em></h2>
+    <div class="card-grid cols-3">
+      <div class="card a-in" style="--d:0.06s"><span class="tag">Experience</span><h4>28 years in customer experience</h4><p>About 1,000 CX specialists handle millions of interactions a month.</p></div>
+      <div class="card a-in" style="--d:0.12s"><span class="tag">Platform</span><h4>We run QContact in live operations</h4><p>CXG configures, supports and runs QContact for clients across several industries.</p></div>
+      <div class="card a-in" style="--d:0.18s"><span class="tag">Assurance</span><h4>GBPO accredited</h4><p>CXG holds GBPO accreditation and is a BPESA member for 2026 and 2027.</p></div>
+    </div>
+    <div class="card-grid" style="grid-template-columns:1.3fr 1fr 1fr;gap:14px;margin-top:1.6rem">
+      <div class="award hero a-in" style="--d:0.24s"><span class="yr">2026 · CapeBPO Awards</span><h4 style="font-size:1.9rem;letter-spacing:-.03em">Top BPO Operator</h4><p>CXG won Top BPO Operator at the CapeBPO Awards 2026.</p></div>
+      <div class="award a-in" style="--d:0.30s"><span class="yr">2026 · BPESA</span><h4>Top Technical Innovation</h4></div>
+      <div class="award a-in" style="--d:0.36s"><span class="yr">2026 · BPESA</span><h4>Top Digital Solution and Transformation Operator</h4></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide dk" data-slide="Next steps">
+  <div class="slide-logos" aria-label="CXG, a member of DSG"><img src="cxg-white.png" alt="CXG"><span class="sl-sep"></span><img src="dsg-white.png" alt="DSG"></div>
+  <div class="slide-inner">
+    <div class="two-col" style="grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:end">
+      <div>
+        <span class="eyebrow">Next steps</span>
+        <h2>We will send Access Bank <em>a full proposal.</em></h2>
+        <p class="lede a-in">The proposal will cover all three seat options. We would welcome a session to take your team through it.</p>
+        <div class="cover-id a-in" style="--d:.06s"><img src="cxg-white.png" alt="CXG Customer Experience Group"><span class="mem">a member of</span><img src="dsg-white.png" alt="DSG Digital Solutions Group"></div>
+      </div>
+      <div class="kpi-strip" style="grid-template-columns:1fr 1fr;margin-top:0">
+        <div class="a-in" style="--d:0.12s"><div class="val hit">£57</div><div class="lbl">Per seat per month, indicative</div></div>
+        <div class="a-in" style="--d:0.18s"><div class="val">20+</div><div class="lbl">AI features included</div></div>
+        <div class="a-in" style="--d:0.24s"><div class="val no-count">750 to 1,500</div><div class="lbl">Seat options</div></div>
+        <div class="a-in" style="--d:0.30s"><div class="val hit">60M+</div><div class="lbl">Access Bank customers</div></div>
+        <p class="mono a-in" style="--d:.36s;grid-column:1/-1;font-size:.8rem;margin-top:1rem">Brandon Meszaros · CEO, CXG · brandon@cxg.co.za · cxg.co.za</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+ if (window.lucide) { lucide.createIcons(); }
+</script>
+<script>
+ const slides = document.querySelectorAll('[data-slide]');
+ const sideNav = document.getElementById('sideNav');
+ slides.forEach((s, i) => {
+ const a = document.createElement('a');
+ a.href = '#s' + i; a.title = s.dataset.slide; s.id = 's' + i;
+ sideNav.appendChild(a);
+ });
+ const dots = sideNav.querySelectorAll('a');
+ const progress = document.getElementById('progress');
+ let currentSlide = 0, presenting = false;
+
+ function onScroll() {
+ if (presenting) return;
+ const h = document.documentElement;
+ progress.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
+ let active = 0;
+ slides.forEach((s, i) => { if (s.getBoundingClientRect().top <= window.innerHeight * 0.4) active = i; });
+ currentSlide = active;
+ dots.forEach((d, i) => d.classList.toggle('active', i === active));
+ }
+ window.addEventListener('scroll', onScroll, { passive: true });
+ onScroll();
+
+ function goToSlide(index) {
+ index = Math.max(0, Math.min(slides.length - 1, index));
+ slides[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+ currentSlide = index;
+ }
+
+ const controls = document.getElementById('presentControls');
+ const counter = document.getElementById('presentCounter');
+ const presentToggle = document.getElementById('presentToggle');
+ let controlsTimer;
+ function flashControls() {
+ if (!presenting) return;
+ controls.classList.add('show');
+ clearTimeout(controlsTimer);
+ controlsTimer = setTimeout(() => controls.classList.remove('show'), 2600);
+ }
+ function showPresentSlide(index) {
+ currentSlide = Math.max(0, Math.min(slides.length - 1, index));
+ slides.forEach((s, i) => s.classList.toggle('is-current', i === currentSlide));
+ counter.textContent = (currentSlide + 1) + ' / ' + slides.length;
+ dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+ const cur = slides[currentSlide]; if (cur) cur.scrollTop = 0;
+ flashControls();
+ }
+ function enterPresent() {
+ presenting = true;
+ document.body.classList.add('present');
+ showPresentSlide(currentSlide);
+ const el = document.documentElement;
+ if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
+ else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+ }
+ function exitPresent() {
+ if (!presenting) return;
+ presenting = false;
+ document.body.classList.remove('present');
+ slides.forEach(s => s.classList.remove('is-current'));
+ controls.classList.remove('show');
+ if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {});
+ else if (document.webkitFullscreenElement && document.webkitExitFullscreen) document.webkitExitFullscreen();
+ slides[currentSlide].scrollIntoView({ block: 'start' });
+ onScroll();
+ }
+ function togglePresent() { presenting ? exitPresent() : enterPresent(); }
+
+ presentToggle.addEventListener('click', enterPresent);
+ document.getElementById('nextBtn').addEventListener('click', () => showPresentSlide(currentSlide + 1));
+ document.getElementById('prevBtn').addEventListener('click', () => showPresentSlide(currentSlide - 1));
+ document.getElementById('exitBtn').addEventListener('click', exitPresent);
+
+ function onFsChange() {
+ if (window.__diagramFsActive) return;
+ if (presenting && !document.fullscreenElement && !document.webkitFullscreenElement) exitPresent();
+ }
+ document.addEventListener('fullscreenchange', onFsChange);
+ document.addEventListener('webkitfullscreenchange', onFsChange);
+ document.addEventListener('mousemove', () => { if (presenting) flashControls(); });
+
+ document.addEventListener('keydown', (e) => {
+ if (e.target.matches('input, textarea, select')) return;
+ const next = ['ArrowRight', 'ArrowDown', 'PageDown', ' '];
+ const prev = ['ArrowLeft', 'ArrowUp', 'PageUp'];
+ if (e.key === 'f' || e.key === 'F') { e.preventDefault(); togglePresent(); return; }
+ if (e.key === 'Escape') { if (presenting) exitPresent(); return; }
+ const step = (d) => presenting ? showPresentSlide(currentSlide + d) : goToSlide(currentSlide + d);
+ if (next.includes(e.key)) { e.preventDefault(); step(1); }
+ else if (prev.includes(e.key)) { e.preventDefault(); step(-1); }
+ else if (e.key === 'Home') { e.preventDefault(); presenting ? showPresentSlide(0) : goToSlide(0); }
+ else if (e.key === 'End') { e.preventDefault(); presenting ? showPresentSlide(slides.length - 1) : goToSlide(slides.length - 1); }
+ });
+ dots.forEach((dot, i) => dot.addEventListener('click', (e) => { e.preventDefault(); presenting ? showPresentSlide(i) : goToSlide(i); }));
+
+ const hint = document.getElementById('navHint');
+ setTimeout(() => hint.classList.add('visible'), 500);
+ setTimeout(() => hint.classList.remove('visible'), 5000);
+ let hintTimer;
+ document.addEventListener('mousemove', (e) => {
+ if (presenting) return;
+ if (e.clientY > window.innerHeight - 120 && e.clientX < 260) {
+ hint.classList.add('visible');
+ clearTimeout(hintTimer);
+ hintTimer = setTimeout(() => hint.classList.remove('visible'), 2500);
+ }
+ });
+</script>
+</body>
+</html>
